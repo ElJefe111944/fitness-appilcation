@@ -1,12 +1,6 @@
 import Navbar from '@/components/navbar';
 import { useState } from 'react';
-
-enum SelectedPage {
-  Home = 'home',
-  Benefits = 'benefits',
-  OurClasses = "ourclasses",
-  ContactUs = "contactus",
-};
+import { SelectedPage } from './shared/types';
 
 function App() {
 

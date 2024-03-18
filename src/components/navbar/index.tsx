@@ -3,15 +3,19 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { SelectedPage } from "@/shared/types";
 import Logo from '@/assets/Logo.png'
 import Link from "./Link";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 
 
-interface Props { 
+interface Props {
   selectedPage: SelectedPage;
   setSelectedPage: (value: SelectedPage) => void;
 }
 
 const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
+
+  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
+  const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
 
 
   return (
@@ -22,21 +26,32 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
             {/* Left Side  */}
             <img src={Logo} alt="logo" />
             {/* Right Side */}
-            <div className="flex items-center justify-between w-full">
-              <div className="flex items-center justify-between gap-8 text-sm">
-                <Link page="Home" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-                <Link page="Benefits" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-                <Link page="Our Classes" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-                <Link page="Contact Us" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-              </div>
-              <div className="flex items-center justify-between gap-8">
-                <p>Sign In</p>
-                <button>Become a Member</button>
-              </div>
-              <div>
+            {isAboveMediumScreens ? (
+              <div className="flex items-center justify-between w-full">
+                <div className="flex items-center justify-between gap-8 text-sm">
+                  <Link page="Home" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+                  <Link page="Benefits" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+                  <Link page="Our Classes" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+                  <Link page="Contact Us" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+                </div>
+                <div className="flex items-center justify-between gap-8">
+                  <p>Sign In</p>
+                  <button>Become a Member</button>
+                </div>
+                <div>
 
+                </div>
               </div>
-            </div>
+            ) : (
+              <button 
+                className="rounded-full bg-secondary-500 p-2 border-none"
+                onClick={() => {}}
+                aria-label="mobile-nav"
+              >
+                <Bars3Icon className="h-5 w-6 text-white" />
+              </button>
+            )}
+
           </div>
         </div>
       </div>

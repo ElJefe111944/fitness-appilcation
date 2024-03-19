@@ -11,17 +11,19 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 interface Props {
   selectedPage: SelectedPage;
   setSelectedPage: (value: SelectedPage) => void;
+  isTopOfPage: boolean;
 }
 
-const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
+const Navbar = ({ selectedPage, setSelectedPage, isTopOfPage }: Props) => {
 
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
+  const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
 
 
   return (
     <nav>
-      <div className={`flex items-center justify-between fixed top-0 z-30 w-full py-6`}>
+      <div className={`${navbarBackground} flex items-center justify-between fixed top-0 z-30 w-full py-6`}>
         <div className="flex items-center justify-between mx-auto w-5/6">
           <div className="flex items-center justify-between w-full gap-16">
             {/* Left Side  */}

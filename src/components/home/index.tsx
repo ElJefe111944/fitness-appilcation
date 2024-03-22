@@ -22,24 +22,24 @@ const Home = ({ setSelectedPage }: Props) => {
     return (
         <section id='home' className='gap-16 bg-gray-20 py-10 md:h-full md:pb-0'>
             {/* IMAGE AND MAIN HEADER */}
-            <div>
+            <div className='mx-auto w-5/6 items-center justify-center flex flex-row md:flex-col md:h-5/6'>
                 {/* MAIN HEADER  */}
-                <div>
+                <div className='z-10 mt-32 md:basis-3/5'>
                     {/* HEADINGS */}
-                    <div>
-                        <div>
-                            <div>
+                    <div className='md:-mt-20'>
+                        <div className='relative'>
+                            <div className='before:absolute before:-top-20 before:-left-20 before:z-[-1] md:before:content-evolvetext'>
                                 <img alt='home-page-text' src={HomePageText} />
                             </div>
                         </div>
-                        <p>Unrivaled Gym. Unparalleled Training Fitness Classes. World Class
+                        <p className='mt-8 text-sm'>Unrivaled Gym. Unparalleled Training Fitness Classes. World Class
                             Studios to get the Body Shapes That you Dream of.. Get Your Dream
                             Body Now.</p>
                     </div>
                     {/* ACTIONS */}
-                    <div>
+                    <div className='mt-8 flex items-center gap-8'>
                         <ActionButton setSelectedPage={setSelectedPage}>Join Now</ActionButton>
-                        <AnchorLink 
+                        <AnchorLink
                             className='text-sm font-bold text-primary-500 underline hover:text-secondary-500'
                             onClick={() => setSelectedPage(SelectedPage.ContactUs)}
                             href={`#${SelectedPage.ContactUs}`}
@@ -50,7 +50,7 @@ const Home = ({ setSelectedPage }: Props) => {
                 </div>
 
                 {/* IMAGE */}
-                <div>
+                <div className='flex basis-3/5 justify-center md:z-10 md:ml-40 md:mt-16 md:justify-items-end'>
                     <img src={HomePageGraphic} alt="home-page-graphic" />
                 </div>
             </div>

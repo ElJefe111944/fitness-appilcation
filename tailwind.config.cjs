@@ -14,7 +14,7 @@ export default {
         "primary-100": "#FFE1E0",
         "primary-300": "#FFA6A3",
         "primary-500": "#FF6B66",
-        "secondary-400": "#FFCD58",
+        "secondary-400": "#FFCD5B",
         "secondary-500": "#FFC132",
       },
       backgroundImage: (theme) => ({
@@ -34,8 +34,8 @@ export default {
     },
     screens: {
       xs: "480px",
-      sm: " 768px",
-      md: " '1060px",
+      sm: "768px",
+      md: "1060px",
     }
   },
   plugins: [],

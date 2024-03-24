@@ -30,14 +30,14 @@ const Navbar = ({ selectedPage, setSelectedPage, isTopOfPage }: Props) => {
             <img src={Logo} alt="logo" />
             {/* Right Side */}
             {isAboveMediumScreens ? (
-              <div className="flex items-center justify-between w-full">
+              <div className="flex items-center justify-between w-full flex-1">
                 <div className="flex items-center justify-between gap-8 text-sm">
                   <Link page="Home" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
                   <Link page="Benefits" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
                   <Link page="Our Classes" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
                   <Link page="Contact Us" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
                 </div>
-                <div className="flex items-center justify-between gap-8">
+                <div className="flex items-center justify-end gap-8 flex-1">
                   <p>Sign In</p>
                   <ActionButton setSelectedPage={setSelectedPage}>Become a Member</ActionButton>
                 </div>

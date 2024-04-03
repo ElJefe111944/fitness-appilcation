@@ -1,12 +1,47 @@
-import { SelectedPage } from "@/shared/types";
+import { SelectedPage, ClassType } from "@/shared/types";
 import { motion } from "framer-motion";
 import HeadingText from "@/shared/HeadingText";
+import Class from "./Class";
 import image1 from "@/assets/image1.png";
 import image2 from "@/assets/image2.png";
 import image3 from "@/assets/image3.png";
 import image4 from "@/assets/image4.png";
 import image5 from "@/assets/image5.png";
 import image6 from "@/assets/image6.png";
+
+
+const classes: Array<ClassType> = [
+  {
+    name: "Weight Training Classes",
+    description: "Consequatur officiis molestiae quae, suscipit optio quia accusantium officia ab rerum obcaecati et.",
+    image: image1,
+  },
+  {
+    name: "Ab Core Classes",
+    description: "Consequatur officiis molestiae quae, suscipit optio quia accusantium officia ab rerum obcaecati et.",
+    image: image2,
+  },
+  {
+    name: "Yoga Classes",
+    description: "Consequatur officiis molestiae quae, suscipit optio quia accusantium officia ab rerum obcaecati et.",
+    image: image3,
+  },
+  {
+    name: "Adventure Classes",
+   
+    image: image4,
+  },
+  {
+    name: "Fitness Classes",
+    description: "Consequatur officiis molestiae quae, suscipit optio quia accusantium officia ab rerum obcaecati et.",
+    image: image5,
+  },
+  {
+    name: "Training Classes",
+    
+    image: image6,
+  }
+]
 
 
 interface Props {
@@ -36,8 +71,15 @@ function Classes({ setSelectedPage }: Props) {
           </div>
         </motion.div>
         <div className="mt-10 h-[353px] w-full overflow-x-auto overflow-y-hidden">
-          <ul className="w-[2800px] whitespace-nowrap">
-
+          <ul className="w-[2800px] whitespace-nowrap flex">
+            {classes.map((item: ClassType, index) => (
+              <Class 
+                key={`${item.name}-${index}`}
+                name={item.name}
+                description={item.description}
+                image={item.image}
+              />
+            ))}
           </ul>
         </div>
       </motion.div>

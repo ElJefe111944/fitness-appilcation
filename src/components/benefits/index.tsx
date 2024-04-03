@@ -90,18 +90,36 @@ function Benefits({ setSelectedPage }: Props) {
             {/* TITLE */}
             <div className="relative">
               <div className="before:absolute before:-top-20 before:-left-20 before:z-[1] before:content-abstractwaves">
-                <div>
+                <motion.div
+                 initial='hidden'
+                 whileInView='visible'
+                 viewport={{ once: true, amount: 0.5 }}
+                 transition={{ delay: 0.4, duration: 0.6 }}
+                 variants={{
+                     hidden: { opacity: 0, x: -50 },
+                     visible: { opacity: 1, x: 0 }
+                 }}
+                >
                   <HeadingText>MILLIONS OF HAPPY MEMBERS GETTING{" "} 
                     <span className="text-primary-500">FIT</span>
                   </HeadingText>
-                </div>
+                </motion.div>
               </div>
             </div>
             {/* DESCRIPTION */}
-            <div>
+            <motion.div
+              initial='hidden'
+              whileInView='visible'
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              variants={{
+                  hidden: { opacity: 0, x: -50 },
+                  visible: { opacity: 1, x: 0 }
+              }}
+            >
               <p className="my-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo nam eos omnis et! Blanditiis temporibus saepe quaerat neque, excepturi facilis earum suscipit perspiciatis, rerum nobis dolorem, dolorum recusandae aut fuga?</p>
               <p mb-5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ipsa corporis deserunt veritatis earum ex reprehenderit illo sit totam obcaecati nam quibusdam cum ut dolore dignissimos, quia repellat eius veniam.</p>
-            </div>
+            </motion.div>
             {/* BUTTON */}
             <div className="relative mt-16">
               <div className="before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles">

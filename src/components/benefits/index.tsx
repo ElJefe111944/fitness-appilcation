@@ -1,8 +1,10 @@
 import HeadingText from "@/shared/HeadingText";
+import BenefitsPageGraphic from "@/assets/BenefitsPageGraphic.png"
 import Benefit from "./Benefit";
 import { SelectedPage, BenefitTypes } from "@/shared/types";
 import { HomeModernIcon, UserGroupIcon, AcademicCapIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
+import ActionButton from "@/shared/ActionButton";
 
 
 interface Props {
@@ -77,6 +79,39 @@ function Benefits({ setSelectedPage }: Props) {
             />
           ))}
         </motion.div>
+
+        {/* GRAPHICS & DESCRIPTION */}
+        <div className="mt-16 items-center justify-between gap-20 md:mt-28 md:flex">
+          {/* GRAPHIC */}
+          <img className="mx-auto" src={BenefitsPageGraphic} alt="benefots-page-graphic" />
+
+          {/* DESCRIPTION */}
+          <div>
+            {/* TITLE */}
+            <div className="relative">
+              <div className="before:absolute before:-top-20 before:-left-20 before:z-[1] before:content-abstractwaves">
+                <div>
+                  <HeadingText>MILLIONS OF HAPPY MEMBERS GETTING{" "} 
+                    <span className="text-primary-500">FIT</span>
+                  </HeadingText>
+                </div>
+              </div>
+            </div>
+            {/* DESCRIPTION */}
+            <div>
+              <p className="my-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo nam eos omnis et! Blanditiis temporibus saepe quaerat neque, excepturi facilis earum suscipit perspiciatis, rerum nobis dolorem, dolorum recusandae aut fuga?</p>
+              <p mb-5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ipsa corporis deserunt veritatis earum ex reprehenderit illo sit totam obcaecati nam quibusdam cum ut dolore dignissimos, quia repellat eius veniam.</p>
+            </div>
+            {/* BUTTON */}
+            <div className="relative mt-16">
+              <div className="before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles">
+                <ActionButton setSelectedPage={setSelectedPage}>
+                  Join Now
+                </ActionButton>
+              </div>
+            </div>
+          </div>
+        </div>
       </motion.div>
     </section>
   )

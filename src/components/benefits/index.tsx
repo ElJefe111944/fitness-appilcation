@@ -29,6 +29,15 @@ function Benefits({ setSelectedPage }: Props) {
     }
   ];
 
+  const container = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  }
+
   return (
     <section
       id="benefits"
@@ -38,12 +47,26 @@ function Benefits({ setSelectedPage }: Props) {
         onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}
       >
         {/* HEADER */}
-        <div className="md:my-5 md:w-3/5">
+        <motion.div 
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          variants={{
+              hidden: { opacity: 0, x: -50 },
+              visible: { opacity: 1, x: 0 }
+          }}
+        className="md:my-5 md:w-3/5">
           <HeadingText>MORE THAN JUST A GYM.</HeadingText>
           <p className="my-5 text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt vitae id tenetur aperiam qui voluptas explicabo ullam soluta natus voluptatibus corporis quia aspernatur fuga excepturi dolorum inventore, necessitatibus ab et!</p>
-        </div>
+        </motion.div>
         {/* BENEFITS */}
-        <div className="md:flex items-center justify-between gap-8 mt-5">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={container}
+          className="md:flex items-center justify-between gap-8 mt-5">
           {benefits.map((benefit: BenefitTypes) => (
             <Benefit 
               key={benefit.title}
@@ -53,7 +76,7 @@ function Benefits({ setSelectedPage }: Props) {
               setSelectedPage={setSelectedPage}
             />
           ))}
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   )

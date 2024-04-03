@@ -3,6 +3,7 @@ import { SelectedPage } from './shared/types';
 import Navbar from '@/components/navbar';
 import Home from './components/home';
 import Benefits from './components/benefits';
+import Classes from './components/classes';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
       <Navbar isTopOfPage={isTopOfPage} selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
       <Home setSelectedPage={setSelectedPage} />
       <Benefits setSelectedPage={setSelectedPage} />
+      <Classes setSelectedPage={setSelectedPage} />
     </div>
   )
 }

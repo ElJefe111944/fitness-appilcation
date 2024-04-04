@@ -70,7 +70,7 @@ function Classes({ setSelectedPage }: Props) {
             <p className="py-5">Consequatur officiis molestiae quae, suscipit optio quia accusantium officia ab rerum obcaecati et. Molestias tempora eligendi explicabo dolorem. Quos quaerat repudiandae amet!</p>
           </div>
         </motion.div>
-        <div className="mt-10 h-[353px] w-full overflow-x-auto overflow-y-hidden">
+        <div className="mt-10 h-[335px] w-full overflow-x-auto overflow-y-hidden">
           <ul className="w-[2800px] whitespace-nowrap flex">
             {classes.map((item: ClassType, index) => (
               <Class 

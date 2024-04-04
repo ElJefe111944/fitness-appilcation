@@ -23,7 +23,7 @@ const Navbar = ({ selectedPage, setSelectedPage, isTopOfPage }: Props) => {
 
   return (
     <nav>
-      <div className={`${navbarBackground} flex items-center justify-between fixed top-0 z-30 w-full py-6`}>
+      <div className={`${navbarBackground} flex items-center justify-between fixed top-0 z-40 w-full py-6`}>
         <div className="flex items-center justify-between mx-auto w-5/6">
           <div className="flex items-center justify-between w-full gap-16">
             {/* Left Side  */}
@@ -60,7 +60,7 @@ const Navbar = ({ selectedPage, setSelectedPage, isTopOfPage }: Props) => {
       </div>
       {/* MOBILE MENU MODAL */}
       {!isAboveMediumScreens && isMenuToggled && (
-        <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl">
+        <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl transition duration-300">
           {/* CLOSE ICON */}
           <div className="flex justify-end p-12">
             <button className="border-none bg-transparent" onClick={() => { setIsMenuToggled(!isMenuToggled) }}>

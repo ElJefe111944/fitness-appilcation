@@ -16,12 +16,14 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
 
-      if(window.screenY === 0){
+      if(window.scrollY === 0){
 
         setIsTopOfPage(true);
         setSelectedPage(SelectedPage.Home);
 
-      } else if(window.screenY !== 0){
+      } 
+      
+      if(window.scrollY !== 0){
 
         setIsTopOfPage(false);
       }

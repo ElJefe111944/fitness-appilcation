@@ -118,7 +118,7 @@ function Benefits({ setSelectedPage }: Props) {
               }}
             >
               <p className="my-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo nam eos omnis et! Blanditiis temporibus saepe quaerat neque, excepturi facilis earum suscipit perspiciatis, rerum nobis dolorem, dolorum recusandae aut fuga?</p>
-              <p mb-5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ipsa corporis deserunt veritatis earum ex reprehenderit illo sit totam obcaecati nam quibusdam cum ut dolore dignissimos, quia repellat eius veniam.</p>
+              <p className="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ipsa corporis deserunt veritatis earum ex reprehenderit illo sit totam obcaecati nam quibusdam cum ut dolore dignissimos, quia repellat eius veniam.</p>
             </motion.div>
             {/* BUTTON */}
             <div className="relative mt-16">

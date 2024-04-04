@@ -29,7 +29,7 @@ const Home = ({ setSelectedPage }: Props) => {
                 className='mx-auto w-5/6 items-center justify-center md:flex md:h-5/6'>
                 
                 {/* MAIN HEADER  */}
-                <div className='z-10 mt-32 md:basis-3/5'>
+                <div className='z-10 mt-32 md:basis-3/5 transition duration-300'>
                     {/* HEADINGS */}
                     <motion.div 
                         initial='hidden'
@@ -64,11 +64,11 @@ const Home = ({ setSelectedPage }: Props) => {
                         className='mt-8 flex items-center gap-8'>
                         <ActionButton setSelectedPage={setSelectedPage}>Join Now</ActionButton>
                         <AnchorLink
-                            className='text-sm font-bold text-primary-500 underline hover:text-secondary-500'
+                            className='no-underline text-sm font-bold text-primary-500 hover:text-secondary-500 transition duration-300'
                             onClick={() => setSelectedPage(SelectedPage.ContactUs)}
                             href={`#${SelectedPage.ContactUs}`}
                         >
-                            <p>Learn More</p>
+                            <p className='no-underline'>Learn More</p>
                         </AnchorLink>
                     </motion.div>
                 </div>

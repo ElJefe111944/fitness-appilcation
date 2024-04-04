@@ -66,7 +66,7 @@ function ContactUs({ setSelectedPage }: Props) {
               target="_blank" 
               onSubmit={onSubmitHandler}
               method="POST"
-              action="https://formsubmit.co/jamesfarr1@sky.com"
+              action="https://formsubmit.co/69889e7097e7dccee3e82638bf4194dd"
             >
               {/* NAME */}
                <input 
@@ -127,6 +127,22 @@ function ContactUs({ setSelectedPage }: Props) {
                 SUBMIT
                </button>
             </form>
+          </motion.div>
+
+          <motion.div
+            className="relative mt-16 basis-2/5 md:mt-0"
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0 }
+            }}
+          >
+            <div className="md:before:content-evolvetext w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1]">
+              <img className="md:w-auto md:h-[450px] h-full w-full" src={ContactUsPageGraphic} alt="Contact-graphic" />
+            </div>
           </motion.div>
         </div>
       </motion.div>
